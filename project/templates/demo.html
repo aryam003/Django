@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- {% for i in data %}    #list
+    <h2>{{i}}</h2>
+    {% endfor %}
+    <h3>outside loop</h3> -->
+
+    <!-- {{data.name}}
+    {{data.age}} -->
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <th>{{i.name}}</th>
+            <th>{{i.age}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+
+<form action="">
+    Name<input type="text" value="{{data1.name}}">
+    Age<input type="text" value="{{data1.age}}">
+</form>
+
+</body>
+</html>
