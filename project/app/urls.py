@@ -10,4 +10,5 @@ urlpatterns=[
     path('index',views.index_page),
     path('demo',views.demo),
     path('snd',views.snd),
+    path('form',views.form),
 ]
