@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-todo=[]
+todo=[{'id':'1','task':'task'},{'id':'2','task':'task1'}]
 
 # Create your views here.
 def fun1(request):
@@ -59,3 +59,23 @@ def form1(request):
         return redirect(form1)
     
     return render(request,'form1.html',{'todo':todo})
+
+def ediy_form(req,id):
+    task=''
+    for i in todo:
+        if i['id']==id:
+            task=i
+        if req.method=='POST':
+            id=req.POST['id']
+            task1=req.POST['task']
+            task['id']=id
+            task['task']=task1
+            return redirect(form1)
+
+    return render(req,'edit_form1.html',{'data':task})
+
+def delete_form1(req,id):
+    for i in todo:
+        if i['id']==id:
+            todo.remove(i)
+    return redirect(form1)        

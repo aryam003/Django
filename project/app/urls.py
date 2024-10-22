@@ -12,4 +12,6 @@ urlpatterns=[
     path('snd',views.snd),
     path('form',views.form),
     path('form1',views.form1),
+    path('edit/<id>',views.ediy_form),
+    path('delete/<id>',views.delete_form1),
 ]

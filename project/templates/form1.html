@@ -10,19 +10,23 @@
 <body>
     <form action="" method="post">
         {% csrf_token %}
-        <input type="text" placeholder="ID" name="id"> 
-        <input type="text" placeholder="task" name="task"> <br>
+        <input type="text" placeholder="ID" name="id" value="{{task.id}}"> 
+        <input type="text" placeholder="task" name="task" value="{{task.task}}"> <br>
         <input type="submit" value="submit">
     </form>
     <table>
         <tr>
             <th>ID</th>
             <th>TASK</th>
+            <th>Actions</th>
+            <th>Delete</th>
         </tr>
         {% for i in todo %}
         <tr>
             <td>{{i.id}}</td>
             <td>{{i.task}}</td>
+            <td><a href="edit/{{i.id}}">Edit</a></td>
+            <td><a href="delete/{{i.id}}">Delete</a></td>
         </tr>
         {% endfor %}
     </table>
