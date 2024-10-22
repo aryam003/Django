@@ -11,4 +11,5 @@ urlpatterns=[
     path('demo',views.demo),
     path('snd',views.snd),
     path('form',views.form),
+    path('form1',views.form1),
 ]

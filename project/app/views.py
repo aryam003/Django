@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 todo=[]
+
 # Create your views here.
 def fun1(request):
     return HttpResponse("welcome")
@@ -49,3 +50,12 @@ def form(request):
     
     return render(request,'todo.html',{'todo':todo})
 
+def form1(request):
+    if request.method=='POST':
+        id=request.POST['id']
+        task=request.POST['task']
+        todo.append({'id':id,'task':task})
+        print(todo)
+        return redirect(form1)
+    
+    return render(request,'form1.html',{'todo':todo})
