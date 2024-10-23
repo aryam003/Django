@@ -6,3 +6,6 @@ class Student(models.Model):
     name=models.TextField()
     email=models.EmailField()
     ph_no=models.IntegerField()
+
+    def __str__(self):
+        return self.name
