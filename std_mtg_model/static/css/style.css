@@ -1,0 +1,33 @@
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+}
+
+input{
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #d9d7d7;
+    border-radius: 4px;
+}
+
+input:hover {
+    background-color: #e8f2e8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}

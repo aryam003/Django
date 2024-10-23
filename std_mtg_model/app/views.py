@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from . models import *
-mod=[]
+mod=[{'roll_no':'1','name':'anu','email':'email','ph_no':'11111111'}]
 # Create your views here.
 def fun1(request):
     return HttpResponse("welcome")
@@ -17,7 +17,7 @@ def mdl(request):
         email=request.POST['email']
         ph_no=request.POST['ph_no']
         mod.append({'roll_no':roll_no,'name':name,'email':email,'ph_no':ph_no})
-        print(mod)
+        # print(mod)
         return redirect(mdl)
     
-    return render(request,'add_std.html',{'todo':mod})
+    return render(request,'add_std.html',{'mod':mod})
