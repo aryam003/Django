@@ -1,0 +1,251 @@
+.main ul{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 10%;
+    overflow: hidden;
+    background-color: rgb(186, 186, 241);
+}
+.main li{
+    float: left;
+    
+}
+li a{
+    display: block;
+    color: aliceblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.main li a:hover{
+    background-color: rgb(86, 90, 93);
+}
+
+
+.movie h3 {
+    padding-top: 10px;
+    font-size: 15px;
+}
+.movie {
+    position: relative;
+    width: 100%;
+}
+.card {
+    position: relative;
+    min-width: 225px;
+    width: 225px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 30px;
+}
+.card-img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+}
+.detail {
+    font-size: 15px;
+    color: #b1aead;
+}
+
+.card-container,.enter-container{
+    position: relative;
+    width: 86%;
+    padding-left: 10px;
+    height: 480px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    /* top: 25%; */
+}
+/* .movie-list{
+    position: relative;
+    padding-top: 40%;
+} */
+.card-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card-body {
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
+    /* background: #000; */
+    padding: 10px;
+    display: flex;
+}
+
+.card-body p {
+    color: #fff;
+    position: absolute;
+    font-size: 16px;
+    padding-left: 30px;
+    top: 7px;
+}
+
+.card-body ion-icon {
+    /* color: #c4242b; */
+    font-size: 20px;
+}
+.title{
+    position: relative;
+    padding-top: 5%;
+    padding-left: 8%;
+}
+.single-img {
+    position: relative;
+    width: 81%;
+    /* max-width: 600px; */
+    margin: auto; 
+    padding-left: 0%;
+    padding-top: 5%;
+}
+
+.responsive-img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+.title-enter{
+    position: absolute;
+    padding-top: 5%;
+    padding-left: 8%;
+    /* font-size: 20px; */
+}
+.enter-container.card{
+    position: absolute;
+    top: 5%;
+}
+.premieres{
+    position: relative;
+    background-color: rgb(48, 48, 71);
+    width: 100%;
+    height: auto;
+    padding: 0%;
+    color: whitesmoke;
+}
+.premieres-img{
+    position: relative;
+    width: 100%;
+    padding-top: 0%;
+}
+.fo h5{
+    font-size: 20px;
+    /* padding-left: 100px; */
+    color: white;
+}
+.fo h6{
+    /* padding-left: 300px; */
+    color: white;
+}
+.icon{
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    padding-top: 730px;
+    padding-left: 41%;
+}
+#toggle{
+    display: none;
+}
+.hamburger{
+    font-size: 30px;
+    cursor: pointer;
+    padding: 1px;
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    z-index: 1000;
+}
+.sidebar{
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    transition: 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 5px black;
+    overflow-y: auto;
+    z-index: 999;
+    display: block;
+
+}
+#toggle:checked + .hamburger +.sidebar{
+    right: 0;
+}
+.sidebar h2{
+    margin-bottom: 20px;
+
+}
+.special-offer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.special-offer img{
+    width: 40px;
+    margin-right: 10px;
+
+}
+.special-offer div{
+    flex-grow: 1;
+}
+.special-offer button{
+    background-color: rgb(93, 9, 9);
+    color: #b1aead;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.special-offer button:hover{
+    background-color: rgb(122, 13, 13);
+}
+.sidebar ul{
+    list-style-type: none;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color: rgb(15, 14, 14);
+    font-size: 18px;
+    display: block;
+}
+.sidebar ul li a:hover{
+    color: rgb(122, 13, 13);
+}
+
+
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .main ul {
+        display: none; /* Hide menu by default */
+        padding-left: 0; /* Remove left padding */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width */
+    }
+
+    .main li {
+        float: none; /* Stack the list items vertically */
+        text-align: left; /* Align text to the left */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the hamburger menu button */
+    }
+}
+
+/* Show menu when active */
+.main ul.active {
+    display: flex; /* Show the menu when the active class is added */
+}
+
