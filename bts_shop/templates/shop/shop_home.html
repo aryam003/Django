@@ -22,7 +22,7 @@
                 <a class="nav-link" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Add prouct</a>
+                <a class="nav-link" href="add_product">Add prouct</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="logout">Logout</a>
@@ -43,7 +43,8 @@
                         <h4 class="card-title">{{pro.name}}</h4>
                         <p class="card-text">{{pro.price}}</p>
                         <p class="card-text">{{pro.offer_price}}</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
+                        <a href="edit_pro/{{pro.pk}}" class="btn btn-primary">Edit</a>
+                        <a href="delete_pro/{{pro.pk}}" class="btn btn-primary">Delete</a>
                       </div>
                     </div>
 
