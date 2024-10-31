@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from . models import *
 import os
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 # from django.http import HttpResponse
 # Create your views here.
@@ -9,6 +11,8 @@ import os
 def shop_login(req):
     if 'shop' in req.session:
         return redirect(shop_home)
+    if 'user' in req.session:
+        return redirect(user_home)
     
     if req.method=='POST':
         uname=req.POST['uname']
@@ -16,15 +20,46 @@ def shop_login(req):
         data=authenticate(username=uname,password=password)
         if data:
             login(req,data)
-            req.session['shop']=uname
-            return redirect(shop_home)
-        
-    return render(req,'login.html')
+            if data.is_superuser:
+                req.session['shop']=uname
+                return redirect(shop_home)
+            else:
+                req.session['user']=uname
+                return redirect(user_home)
+        else:
+            messages.warning(req,"invalid user or password")  
+        return redirect(shop_login)
+    else:      
+        return render(req,'login.html')
 
 def shop_logout(req):
     logout(req)
     req.session.flush()
     return redirect(shop_login)
+
+def register(req):
+    if req.method=='POST':
+        name=req.POST['name']
+        email=req.POST['email']
+        password=req.POST['password']
+        try:
+            data=User.objects.create_user(first_name=name,username=email,email=email,password=password)
+            data.save()
+            return redirect(shop_login)
+        except:
+            messages.warning(req,"user details already exits.")
+    else:
+        return render(req,'register.html')
+
+
+
+
+
+
+
+
+
+
 
 def shop_home(req):
     if 'shop' in req.session:
@@ -69,3 +104,12 @@ def delete_pro(req,id):
     os.remove('media/'+url)
     data.delete()
     return redirect(shop_home)
+
+
+
+
+#---------user
+
+def user_home(req):
+    if 'user' in req.session:
+        return render(req,'user/user_home.html')
