@@ -48,6 +48,7 @@ def register(req):
             return redirect(shop_login)
         except:
             messages.warning(req,"user details already exits.")
+            return redirect(register)
     else:
         return render(req,'register.html')
 

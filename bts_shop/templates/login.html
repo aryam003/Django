@@ -16,7 +16,7 @@
         {% csrf_token %}
         uname <input type="text" name="uname">
         password <input type="password" name="password">
-        <input type="submit" value="Login">
+        <input type="submit" value="Login"> 
         
 
         {% if messages %}
@@ -28,7 +28,9 @@
         {% endfor %}  
         {% endif %}
 
+        <a href="register">registration</a>
+
     </form>
-    <a href="register">registration</a>
+    
 </body>
 </html>
