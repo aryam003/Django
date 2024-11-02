@@ -16,11 +16,14 @@
             
             <div class="mt-5">
             <a href="" class="btn btn-outline-primary">Buy</a>
-            <a href="../add_to_cart/{{product.pk}}" class="btn btn-outline-primary">add to cart</a>
-            
+            {% if cart %}
+                <a href="../cart_display" class="btn btn-outline-primary"> Go to cart</a>
+                {% else %}
+                    <a href="../add_to_cart/{{product.pk}}" class="btn btn-outline-primary">add to cart</a>
+            {% endif%}
             </div>
         </div>
-    <div class="cil-lg-7">
+    <div class="col-lg-7">
     <h4 class="card-title">{{product.name}}</h4>
     <p class="card-text">{{product.price}}</p>
     <p class="card-text">{{product.offer_price}}</p>
