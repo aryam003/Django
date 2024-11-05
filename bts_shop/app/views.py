@@ -58,7 +58,7 @@ def register(req):
 
 
 
-
+#---------admin----------------------------------------------------------------------------
 
 
 
@@ -109,7 +109,7 @@ def delete_pro(req,id):
 
 
 
-#---------user
+#---------user--------------------------------------------------------------------------
 
 def user_home(req):
     if 'user' in req.session:
@@ -143,3 +143,17 @@ def delete_cart(req,id):
     data=Card.objects.get(pk=id)
     data.delete()
     return redirect(cart_display)   
+
+
+def buy_pro(req,id):
+    products=product.objects.get(pk=id)
+    user=User.objects.get(username=req.session['user'])
+    price=products.offer_price
+    data=Buy.objects.create(user=user,product=products,price=price)
+    data.save()
+    return redirect(user_home)
+
+def user_view_bookings(req):
+    user=User.objects.get(username=req.session['user'])
+    data=Buy.objects.filter(user=user)
+    return render(req,'user/view_booking.html',{'data':data})

@@ -16,8 +16,9 @@
             <div class="col-lg-12">
                 <img src="{{cart_obj.product.img.url}}" alt="" style="width: 300px; height: 300px;">
                 {{cart_obj.product.name}}
-                {{cart_obj.product.price}}
-                {{cart_obj.product.offer_price}}
+                price:  {{cart_obj.product.price}}
+                offer_price: {{cart_obj.product.offer_price}}
+                <a href="buy_pro/{{cart_obj.product.pk}}" class="btn btn-outline-primary">Buy now</a>
                 <a href="../delete_cart/{{cart_obj.pk}}" class="btn btn-outline-primary"><i class="bi bi-trash3"></i></a>
             </div>
             {% endfor %}
