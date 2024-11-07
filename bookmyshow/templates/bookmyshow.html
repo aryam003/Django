@@ -119,20 +119,21 @@
   <h3 class="title">Recommended Movies</h3>
   <div class="movies-list">
       <div class="card-container">
-
+        {% for i in data %}
           <div class="movie">
               <div class="card">
-                  <a href="ARM.html"><img src="{% static 'image/img1.avif' %}" class="card-img" alt=""></a>
+                  <a href="view_movie/{{i.pk}}"><img src="{{i.fb_img.url}}" class="card-img" alt="" ></a>
                   <div class="card-body">
                       <ion-icon name="heart-sharp"></ion-icon>
                       
                   </div>
               </div>
-              <h3>A.R.M</h3>
-              <p class="detail">Action/Adventure/Drama</p>
+              <h3>{{i.movie_name}}</h3>
+              <p class="detail">{{i.category}}</p>
           </div>
+        {% endfor %}
 
-          <div class="movie">
+          <!-- <div class="movie">
               <div class="card">
                   <img src="{% static 'image/img2.avif' %}" class="card-img" alt="">
                   <div class="card-body">
@@ -140,9 +141,9 @@
               </div>
               <h3>Joker:Folie a Deux</h3>
               <p class="detail">Drama/Suspense/Thriller</p>
-          </div>
+          </div> -->
 
-          <div class="movie">
+          <!-- <div class="movie">
               <div class="card">
                   <img src="{% static 'image/img3.avif' %}" class="card-img" alt="">
                   <div class="card-body">
@@ -217,7 +218,7 @@
               </div>
               <h3>Lubber Pandhu</h3>
               <p class="detail">Drama/Romantic/sports</p>
-          </div>
+          </div> -->
           
 
       </div>
