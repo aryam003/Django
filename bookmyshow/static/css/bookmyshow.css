@@ -221,6 +221,13 @@ li a{
     color: rgb(122, 13, 13);
 }
 
+/* .carousel-item img{
+    position:absolute;
+    left: 50px;
+    width: 13.5%;
+    height: 13.5%;
+} */
+
 
 
 
@@ -228,24 +235,24 @@ li a{
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     .main ul {
-        display: none; /* Hide menu by default */
-        padding-left: 0; /* Remove left padding */
-        flex-direction: column; /* Stack items vertically */
-        width: 100%; /* Full width */
+        display: none; 
+        padding-left: 0; 
+        flex-direction: column; 
+        width: 100%; 
     }
 
     .main li {
-        float: none; /* Stack the list items vertically */
-        text-align: left; /* Align text to the left */
+        float: none; 
+        text-align: left; 
     }
 
     .menu-toggle {
-        display: block; /* Show the hamburger menu button */
+        display: block; 
     }
 }
 
-/* Show menu when active */
+
 .main ul.active {
-    display: flex; /* Show the menu when the active class is added */
+    display: flex; 
 }
 

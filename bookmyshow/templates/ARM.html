@@ -63,10 +63,54 @@
     </ul>
 </div>
     
-    <div class="img" style="background-image: url({{data.bg_img.url}}); width: 100%;">
-        <img src="{{data.fb_img.url}}" alt="" style="width: 300px; height: 500px;;">
+    <div class="bgimg" style="background-image: url({{data.bg_img.url}}); width: 100%;">
+        <img src="{{data.fb_img.url}}" alt="" style="width: 300px; height: 500px;padding-left: 100px;">
         <h2 style="color: rgb(245, 248, 248);">{{data.movie_name}}</h2>
         </div>
+
+        <div class="w" style="position: relative; left: 100px; top: 100px;">
+            <h2>cast</h2>
+        
+        <div  class="carousel-inner">
+            <div class="carousel-item active" style="left: 100px; top: 10px; position: relative;">
+                <div class="d-flex gap-2">
+                <img src="{% static 'image/ARM_fb.jpeg' %}" class="rounded-circle" style="width: 150px;height: 150px; left: 100px;" >
+                <!-- <img src="{% static 'image/ARM_fb.jpeg' %}" class="rounded-circle" style="width: 150px;height: 150px; left: 100px;" > -->
+                 
+              <!--  <img src="img-20181120-wa0016-500x500.webp" class="rounded-circle"  >
+                <img src="IMG-20191205-WA0139.webp" class="rounded-circle"  >
+                <img src="indian-stylish-kurti.jpeg" class="rounded-circle"  >
+                <img src="muslin-party-wear-kurti-in-multi-colour-294501-1000x1375.webp" class="rounded-circle"  >
+                <img src="sale-ch.webp" class="rounded-circle"  > -->
+                </div>
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#caro" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#caro" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+              <!-- <h6>--------------------------------------</h6> -->
+           </div> 
+
+           <div class="w" style="position: relative; top: 200px; left: 100px;">
+            <h2>crew</h2>
+
+            <div  class="carousel-inner">
+                <div class="carousel-item active" style="left: 100px; top: 10px; position: relative;">
+                    <div class="d-flex gap-2">
+                    <img src="{% static 'image/ARM_fb.jpeg' %}" class="rounded-circle" style="width: 150px;height: 150px; left: 100px;" >
+                    
+                    <!-- <img src="59091-indian-kurti-design-deepikasdeepclicks-white.jpeg" class="rounded-circle"  >
+                    <img src="img-20181120-wa0016-500x500.webp" class="rounded-circle"  >
+                    <img src="IMG-20191205-WA0139.webp" class="rounded-circle"  >
+                    <img src="indian-stylish-kurti.jpeg" class="rounded-circle"  >
+                    <img src="muslin-party-wear-kurti-in-multi-colour-294501-1000x1375.webp" class="rounded-circle"  >
+                    <img src="sale-ch.webp" class="rounded-circle"  > -->
+                    </div>
+           </div>
+
     
 </body>
 </html>
