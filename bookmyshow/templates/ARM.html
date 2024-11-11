@@ -63,52 +63,63 @@
     </ul>
 </div>
     
-    <div class="bgimg" style="background-image: url({{data.bg_img.url}}); width: 100%;">
+    <!-- <div class="bgimg" style="background-image: url({{data.bg_img.url}}); width: 100%;">
         <img src="{{data.fb_img.url}}" alt="" style="width: 300px; height: 500px;padding-left: 100px;">
         <h2 style="color: rgb(245, 248, 248);">{{data.movie_name}}</h2>
-        </div>
+        </div> -->
 
-        <div class="w" style="position: relative; left: 100px; top: 100px;">
-            <h2>cast</h2>
+        <div class="p1" style="background-image: url({{data.bg_img.url}});">
+       
+            <img src="{{data.fb_img.url}}" alt="" style="width: 470px;height: 400px;padding-left: 15%;padding-top: 2%;"><h1 style="padding-left: 3%;display: inline;color: aliceblue;">{{data.movie_name}}</h1>
+            
+        </div>
         
-        <div  class="carousel-inner">
-            <div class="carousel-item active" style="left: 100px; top: 10px; position: relative;">
-                <div class="d-flex gap-2">
-                <img src="{% static 'image/ARM_fb.jpeg' %}" class="rounded-circle" style="width: 150px;height: 150px; left: 100px;" >
-                <!-- <img src="{% static 'image/ARM_fb.jpeg' %}" class="rounded-circle" style="width: 150px;height: 150px; left: 100px;" > -->
-                 
-              <!--  <img src="img-20181120-wa0016-500x500.webp" class="rounded-circle"  >
-                <img src="IMG-20191205-WA0139.webp" class="rounded-circle"  >
-                <img src="indian-stylish-kurti.jpeg" class="rounded-circle"  >
-                <img src="muslin-party-wear-kurti-in-multi-colour-294501-1000x1375.webp" class="rounded-circle"  >
-                <img src="sale-ch.webp" class="rounded-circle"  > -->
-                </div>
-            </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#caro" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#caro" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-              </button>
+
+              <div class="container mt-5">
+                <!-- <h3 class="text-center">Cast</h3> -->
+                <!-- <div id="castCarousel" class="carousel slide" data-bs-ride="carousel" >
+                  <div class="carousel-inner text-center"> -->
+                    <h5>cast</h5>
+                    <div class="carousel-item active">
+                      <div class="row">
+                        {% for i in member %}
+                        {% if i.cast %}
+                        <div class="col">
+                          <img src="{{i.img.url}}" class="rounded-circle" alt="" style="width: 100px;">
+                          <p><strong>{{i.name}}</strong><br>{{i.position}}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+
+
+
               <!-- <h6>--------------------------------------</h6> -->
            </div> 
 
-           <div class="w" style="position: relative; top: 200px; left: 100px;">
-            <h2>crew</h2>
-
-            <div  class="carousel-inner">
-                <div class="carousel-item active" style="left: 100px; top: 10px; position: relative;">
-                    <div class="d-flex gap-2">
-                    <img src="{% static 'image/ARM_fb.jpeg' %}" class="rounded-circle" style="width: 150px;height: 150px; left: 100px;" >
+           
+            
+            <div class="container mt-5" style="padding-top: 150px;">
+                
+                <!-- <h3 class="text-center">Cast</h3> -->
+                <!-- <div id="castCarousel" class="carousel slide" data-bs-ride="carousel" > -->
+                  <!-- <div class="carousel-inner text-center"> -->
                     
-                    <!-- <img src="59091-indian-kurti-design-deepikasdeepclicks-white.jpeg" class="rounded-circle"  >
-                    <img src="img-20181120-wa0016-500x500.webp" class="rounded-circle"  >
-                    <img src="IMG-20191205-WA0139.webp" class="rounded-circle"  >
-                    <img src="indian-stylish-kurti.jpeg" class="rounded-circle"  >
-                    <img src="muslin-party-wear-kurti-in-multi-colour-294501-1000x1375.webp" class="rounded-circle"  >
-                    <img src="sale-ch.webp" class="rounded-circle"  > -->
+                    <div class="carousel-item active">
+                      <div class="row">
+                        {% for i in member %}
+                        {% if i.crew %}
+                        <div class="col">
+                            <h4 style="top: 100px;">crew</h4>
+                          <img src="{{i.img.url}}" class="rounded-circle" alt="" style="width: 100px;">
+                          <p><strong>{{i.name}}</strong><br>{{i.position}}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                      </div>
                     </div>
+           </div>
            </div>
 
     
