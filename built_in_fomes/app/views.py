@@ -21,6 +21,6 @@ def Model_form_fun(req):
        form1=Model_form(req.POST)
        if form1.is_valid():
            form1.save()
-        #    return redirect(model_form_fun)
+           return redirect(Model_form_fun)
     form=Model_form()
     return render(req,'model_form.html',{'form':form})
